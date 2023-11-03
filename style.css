@@ -1,0 +1,205 @@
+:root {
+--Light-red: hsl(0, 100%, 67%);
+--Orangey-yellow: hsl(39, 100%, 56%);
+--Green-teal: hsl(166, 100%, 37%);
+--Cobalt-blue: hsl(234, 85%, 45%);
+--Light-slate-blue: hsl(252, 100%, 67);
+--Light-royal-blue: hsl(241, 81%, 54%);
+--Violet-blue: hsla(256, 72%, 46%, 1);
+--Persian-blue: hsla(241, 72%, 46%, 0);
+--White: hsl(0, 0%, 100%);
+--Pale-blue: hsl(221, 100%, 96%);
+--Light-lavender: hsl(241, 100%, 89%);
+--Dark-gray-blue: hsl(224, 30%, 27%);
+--padding: 2rem;
+--margin: 1.5rem;
+
+--clr-neutral-hsl-100: 0, 0%, 100%;
+--clr-primary-hsl-400: 252, 100%, 67%;
+--clr-primary-400: hsl(var(--clr-primary-hsl-400));
+--clr-secondary-400: hsl(var(--clr-secondary-hsl-400));
+--clr-secondary-hsl-400: 241, 81%, 54%;
+--clr-primary-hsl-500: 256, 72%, 46%;
+--clr-primary-500: hsla(var(--clr-primary-hsl-500));
+--clr-secondary-hsl-500: 241, 72%, 46%;
+--gradient-primary: linear-gradient(
+    var(--clr-primary-400), 
+    var(--clr-secondary-400));
+--gradient-to-transparent: linear-gradient(
+    var(--clr-primary-500),
+    hsl(var(--clr-secondary-hsl-500), 0));
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--White);
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 18px;
+    background: var(--White);
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: var(--White);
+    margin: 0 auto;
+    max-width: 600px;
+    overflow: hidden;
+    box-shadow: .5rem 1rem 3rem  hsla(241, 81%, 54%, .1);
+    border-radius: 20px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--White);
+}
+
+.result {
+    background: var(--gradient-primary);
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.result h2 {
+    text-align: center;
+    color: var(--Light-lavender);
+    margin-bottom: var(--margin);
+}
+
+.result h3 {
+    color: var(--White);
+    font-weight: 700;
+    margin-top: var(--margin);
+}
+
+.result p {
+    color: var(--Light-lavender);
+    font-size: 17px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.result-score {
+    background-color: var(--gradient-to-transparent);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.circle p {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.circle p span {
+    font-size: 50px;
+    color: var(--White);
+    font-weight: 800;
+}
+
+.summary {
+    background-color: hsl(0, 0%, 0%,);
+    padding: var(--padding);
+}
+
+.boxes {
+    margin-top: var(--margin);
+}
+
+.box {
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    margin-bottom: 18px;
+}
+
+.box a {
+    display: flex;
+}
+
+.box a img {
+    margin: 0 8px;
+}
+
+.box p {
+    color: var(--Dark-gray-blue);
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.box span {
+    color: gray;
+    font-weight: 400;
+}
+
+.react {
+    color: var(--Light-red);
+    background-color: hsla(0, 100%, 67%, 0.1);
+}
+
+.memory {
+    color: var(--Orangey-yellow);
+    background-color: hsla(39, 100%, 56%, 0.1);
+}
+
+.verbal {
+    color: var(--Green-teal);
+    background-color: hsla(166, 100%, 37%, 0.1);
+}
+
+.visual {
+    color: var(--Cobalt-blue);
+    background-color: hsla(234, 85%, 45%, 0.1);
+}
+
+.continue {
+    background-color: var(--Dark-gray-blue);
+    padding: 1rem 2rem;
+    display: block;
+    text-align: center;
+    color: var(--White);
+    border-radius: 100vw;
+    margin-top: var(--padding);
+    cursor: pointer;
+    line-height: 1;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr;
+        border-radius: 0;
+    }
+    .result {
+        border-radius: 0 0 25px 25px;
+    }
+
+    .summary {
+        padding: auto;
+        margin: 0;
+        width: 100%;
+    }
+
+    .container {
+        border-radius: 0;
+    }
+}
